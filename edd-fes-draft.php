@@ -32,6 +32,12 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
          */
         private static $instance;
 
+        /**
+         * @var         EDD_FES_Draft_Download_Table $download_table Manages all download table actions
+         * @since       1.0.0
+         */
+        protected $download_table;
+
 
         /**
          * Get active instance
@@ -47,6 +53,8 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
                 self::$instance->includes();
                 self::$instance->load_textdomain();
                 self::$instance->hooks();
+
+                self::$instance->download_table = new EDD_FES_Draft_Download_Table();
             }
 
             return self::$instance;
@@ -87,6 +95,7 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
          */
         private function includes() {
             require_once EDD_FES_DRAFT_DIR . 'includes/scripts.php';
+            require_once EDD_FES_DRAFT_DIR . 'includes/class-download-table.php';
         }
 
 
@@ -106,6 +115,9 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
             add_filter( 'fes_render_submission_form_frontend_fields', array( $this, 'edd_fes_draft_html_fes_field' ), 10, 4 );
             add_filter( 'fes_save_submission_form_frontend_values', array( $this, 'edd_fes_draft_submission_form_values' ), 10, 3 );
             add_filter( 'fes_after_submission_form_save_frontend', array( $this, 'edd_fes_draft_after_form_save_frontend' ), 10, 4 );
+
+            // Download list
+            add_filter( 'fes_download_table_actions', array( $this, 'edd_fes_draft_download_table_actions' ), 10, 2 );
 
             // Approve download
             add_action( 'fes_approve_download_admin', array( $this, 'edd_fes_draft_approve_download' ) );
@@ -211,6 +223,18 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
             return $output;
         }
 
+        public function edd_fes_draft_download_table_actions( $admin_actions, $post ) {
+            if ( $post->post_status == 'pending' && current_user_can( 'publish_posts' ) ) {
+                $admin_actions['decline'] = array(
+                    'action' => 'declined',
+                    'name' => __( 'Decline', 'edd_fes_draft' ),
+                    'url' => wp_nonce_url( add_query_arg( 'decline_download', $post->ID ), 'decline_download' )
+                );
+            }
+
+            return $admin_actions;
+        }
+
         // On approve download, if has an original download, then update the original download and remove the current one
         public function edd_fes_draft_approve_download( $download_id ) {
             global $wpdb;
@@ -311,7 +335,7 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
                     array( $this, 'edd_fes_draft_original_download_meta_box_content' ), 
                     'download', 
                     'side', 
-                    'default'
+                    'high'
                 );
             }
         }
