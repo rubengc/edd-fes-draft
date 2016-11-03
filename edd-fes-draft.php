@@ -3,7 +3,7 @@
  * Plugin Name:     EDD FES Draft
  * Plugin URI:      https://wordpress.org/plugins/edd-fes-draft/
  * Description:     Adds draft submissions to Easy Digital Downloads Frontend Submissions plugin
- * Version:         1.0.0
+ * Version:         1.0.1
  * Author:          rubengc
  * Author URI:      http://rubengc.com
  * Text Domain:     edd-fes-draft

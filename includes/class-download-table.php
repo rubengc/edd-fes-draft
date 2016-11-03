@@ -3,7 +3,7 @@
  * Scripts
  *
  * @package     EDD\FES_Draft\Download_Table
- * @since       1.0.0
+ * @since       1.0.1
  */
 
 
