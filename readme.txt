@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: easy digital downloads, digital, download, downloads, edd, rubengc, fes, frontend, submission, submissions, draft, e-commerce
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ Yes, you can enable or disable all functions of this plugin (auto save, preview 
 == Upgrade Notice ==
 
 == Changelog ==
+
+= 1.0.2 =
+* Support for auto approve setting
 
 = 1.0.1 =
 * Fix: If vendor saves quickly the download, sometimes creates a duplicated submission (one with draft status and other with pending status), added some checks to prevent this

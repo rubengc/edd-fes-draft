@@ -3,7 +3,7 @@
  * Plugin Name:     EDD FES Draft
  * Plugin URI:      https://wordpress.org/plugins/edd-fes-draft/
  * Description:     Adds draft submissions to Easy Digital Downloads Frontend Submissions plugin
- * Version:         1.0.1
+ * Version:         1.0.2
  * Author:          rubengc
  * Author URI:      http://rubengc.com
  * Text Domain:     edd-fes-draft
@@ -204,7 +204,7 @@ if( !class_exists( 'EDD_FES_Draft' ) ) {
                 $output['post_id'] = $post->ID;
                 $output['message'] = __( 'Draft saved successfully!', 'edd-fes-draft' );
             } else {
-                $post->post_status = 'pending';
+                $post->post_status = ( ! (bool) EDD_FES()->helper->get_option( 'fes-auto-approve-submissions', false ) ) ? 'pending' : 'publish';
 
                 // If prevent edit pending products then redirects to products list page
                 if( edd_get_option( 'edd_fes_draft_prevent_edit_pending', false ) ) {
