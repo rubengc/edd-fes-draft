@@ -1,6 +1,6 @@
 (function($) {
 	if($('form[name="fes-submission-form"]').length != 0) {
-		$('#edd-fes-draft-button').click(function () {
+		$('body').on('click', '#edd-fes-draft-button', function () {
 			var form = $('form[name="fes-submission-form"]');
 
 			if (form.find('input[type="hidden"][name="save_draft"]').length == 0) {
@@ -66,7 +66,8 @@
 
 		if (edd_fes_draft.pending_checkbox) {
 			$('input[type="submit"]').attr('disabled', 'disabled');
-			$('#edd_fes_draft_pending_checkbox').change(function () {
+
+			$('body').on('change', '#edd_fes_draft_pending_checkbox', function () {
 				// If is doing an auto save then does not enables the submit button (this prevents duplications)
 				if (edd_fes_draft.auto_save && doing_auto_save) {
 					return false;

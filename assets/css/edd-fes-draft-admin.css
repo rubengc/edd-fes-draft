@@ -1,0 +1,12 @@
+.edd-fes-draft-diff .diff-title th {
+    text-align: left;
+}
+
+.edd-fes-draft-diff table.diff .diff-deletedline,
+.edd-fes-draft-diff table.diff .diff-addedline {
+    width: 49%;
+}
+
+.edd-fes-draft-diff table.diff tbody tr td:nth-child(2) {
+    width: 2%;
+}

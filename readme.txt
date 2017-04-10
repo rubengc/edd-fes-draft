@@ -1,10 +1,10 @@
 === EDD FES Draft ===
-Contributors: rubengc
+Contributors: tsunoa, rubengc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=64N6CERD8LPZN
 Tags: easy digital downloads, digital, download, downloads, edd, rubengc, fes, frontend, submission, submissions, draft, e-commerce
 Requires at least: 4.0
-Tested up to: 4.6.1
-Stable tag: 1.0.2
+Tested up to: 4.7.3
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,9 +22,9 @@ Once activated, EDD FES Draft will add a complete draft functionality with some 
 1. Checkbox to toggle disabled status of submit to pending button
 1. Prevents already published products change their status (will create a copy that get removed on approve)
 1. Button on downloads list to decline submissions as draft
+1. *New: Adds a meta box with all differences between original download a new version submitted
 
 There's a [GIT repository](https://github.com/rubengc/edd-fes-draft) too if you want to contribute a patch.
-
 
 == Installation ==
 
@@ -51,6 +51,10 @@ Yes, you can enable or disable all functions of this plugin (auto save, preview 
 == Upgrade Notice ==
 
 == Changelog ==
+
+= 1.0.3 =
+* Completely rewrite of the entire plugin
+* New meta box with all differences between original download and new version submitted
 
 = 1.0.2 =
 * Support for auto approve setting
