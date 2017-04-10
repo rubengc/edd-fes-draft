@@ -48,6 +48,8 @@ Yes, you can enable or disable all functions of this plugin (auto save, preview 
 
 2. Screenshot from EDD settings page
 
+3. Changes metabox
+
 == Upgrade Notice ==
 
 == Changelog ==
