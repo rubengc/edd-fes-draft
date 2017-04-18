@@ -1,7 +1,7 @@
 === EDD FES Draft ===
 Contributors: tsunoa, rubengc
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=64N6CERD8LPZN
-Tags: easy digital downloads, digital, download, downloads, edd, rubengc, fes, frontend, submission, submissions, draft, e-commerce
+Tags: tsunoa, rubengc, easy digital downloads, digital, download, downloads, edd, fes, frontend, submission, submissions, draft, e-commerce
 Requires at least: 4.0
 Tested up to: 4.7.3
 Stable tag: 1.0.3
@@ -11,36 +11,51 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Adds draft submissions to Easy Digital Downloads Frontend Submissions plugin.
 
 == Description ==
-This plugin requires [Easy Digital Downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/ "Easy Digital Downloads").
-This plugin requires [Frontend Submissions](https://easydigitaldownloads.com/downloads/frontend-submissions/ "Frontend Submissions").
 
-Once activated, EDD FES Draft will add a complete draft functionality with some extra options (everyone could be enabled or disabled at any moment):
+EDD FES Draft will add a complete draft functionality with some extra options (everyone could be enabled or disabled at any moment).
 
-1. Allow vendors to save products as draft
-1. AJAX auto save
-1. Preview button
-1. Checkbox to toggle disabled status of submit to pending button
-1. Prevents already published products change their status (will create a copy that get removed on approve)
-1. Button on downloads list to decline submissions as draft
-1. *New: Adds a meta box with all differences between original download a new version submitted
+Allow your sellers to save product drafts to continue editing them later. In addition, the auto-save functionality will save all changes of the product being edited.
+
+Keep the visibility of products already published! If a vendor creates a new version of a product that has already been published EDD FES Draft will automatically create a copy of the product and submit as pending the new one version.
+
+= Features of EDD FES Draft =
+
+* Allow vendors to save products as draft
+* AJAX auto save
+* Preview button
+* Checkbox to toggle disabled status of submit to pending button
+* Prevents already published products change their status (will create a copy that get removed on approve)
+* Button on downloads list to decline submissions as draft
+* Adds a meta box with all differences between original download a new version submitted
 
 There's a [GIT repository](https://github.com/rubengc/edd-fes-draft) too if you want to contribute a patch.
 
+This plugin requires [Easy Digital Downloads](http://wordpress.org/extend/plugins/easy-digital-downloads/ "Easy Digital Downloads") and  [Frontend Submissions](https://easydigitaldownloads.com/downloads/frontend-submissions/ "Frontend Submissions").
+
 == Installation ==
 
-1. Unpack the entire contents of this plugin zip file into your `wp-content/plugins/` folder locally
-1. Upload to your site
-1. Navigate to `wp-admin/plugins.php` on your site (your WP Admin plugin page)
-1. Activate this plugin
-1. That's it!
+= From WordPress backend =
 
-OR you can just install it with WordPress by going to Plugins >> Add New >> and type this plugin's name
+1. Navigate to Plugins -> Add new.
+2. Click the button "Upload Plugin" next to "Add plugins" title.
+3. Upload the downloaded zip file and activate it.
+
+= Direct upload =
+
+1. Upload the downloaded zip file into your `wp-content/plugins/` folder.
+2. Unzip the uploaded zip file.
+3. Navigate to Plugins menu on your WordPress admin area.
+4. Activate this plugin.
 
 == Frequently Asked Questions ==
 
 = Can I disable some functionalities of this plugin?  =
 
 Yes, you can enable or disable all functions of this plugin (auto save, preview button, etc).
+
+== Suggestions ==
+
+If you have suggestions about how to improve EDD FES Draft, you can [write us](mailto:contact@tsunoa.com "Tsunoa") so we can bundle them into EDD FES Draft.
 
 == Screenshots ==
 
